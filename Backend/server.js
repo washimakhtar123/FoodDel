@@ -12,8 +12,25 @@ const app = express();
 const PORT =process.env.PORT||4000;
 
 // Middleware
+const allowedOrigins = [
+    "https://food-del-znkp.vercel.app",
+    "http://localhost:5174",
+    "http://localhost:5173"
+  ];
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
+  }));
+
 const path = require("path");
 app.use("/images", express.static(path.join(__dirname, "Uploads")));
 
