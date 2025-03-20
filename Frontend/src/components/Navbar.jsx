@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { assets } from "../assets/assets";
 import logo from "../assets/logo.png"
 import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../context/StoreContext";
