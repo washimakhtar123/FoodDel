@@ -14,6 +14,7 @@ const PORT =process.env.PORT||4000;
 // Middleware
 const allowedOrigins = [
     "https://food-del-znkp.vercel.app",
+    "https://food-del-2dgp.vercel.app",
     "http://localhost:5174",
     "http://localhost:5173"
   ];
