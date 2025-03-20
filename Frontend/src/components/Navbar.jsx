@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import {assets} from '../assets/assets'
 import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../context/StoreContext";
 import {  toast } from 'react-toastify';
@@ -22,7 +23,7 @@ const Navbar = ({ setShowlogin }) => {
       <div className="container w-[90%] mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="logo" className="h-10" />
+          <img src={assets.logo} alt="logo" className="h-10" />
         </Link>
 
         {/* Navigation Links */}
